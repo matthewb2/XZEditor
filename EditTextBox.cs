@@ -255,7 +255,7 @@ namespace XZ.Edit {
 
         
         protected override void WndProc(ref Message m) {
-            Console.WriteLine("wndproc called");
+            //Console.WriteLine("wndproc called");
             if (m.Msg == CharCommand.WM_HSCROLL || m.Msg == CharCommand.WM_VSCROLL)
                 if (m.WParam.ToInt32() != CharCommand.SB_ENDSCROLL)
                     Invalidate();
@@ -263,7 +263,10 @@ namespace XZ.Edit {
             base.WndProc(ref m);
 
             if (ImeAllowed && m.Msg == CursorAndIME.WM_IME_SETCONTEXT && m.WParam.ToInt32() == 1)
+            {
+                Console.WriteLine("hangul key pressed");
                 this.PCursor.CreateImmAssociateContext();
+            }
         }
 
 

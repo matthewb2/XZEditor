@@ -10,13 +10,6 @@ using XZ.Edit.Entity;
 namespace XZ.Edit {
     public class Draw {
 
-
-        private Pen _puckerPen;
-        private Pen _puckerPenSelect;
-        private SolidBrush _puckerBrush;
-
-        
-
         public const int LeftSpace = 3;
 
         private Parser pParser;
@@ -146,7 +139,7 @@ namespace XZ.Edit {
 
         public int PPuckerWidth {
             get {
-                return pNumWidth * 2;
+                return pNumWidth;
             }
         }
 
@@ -169,14 +162,14 @@ namespace XZ.Edit {
         /// </summary>
         /// <param name="g"></param>
         public void DrawContents(Graphics g) {
-            Console.WriteLine("drawcontents called");
+            //Console.WriteLine("drawcontents called");
             this.pDrawNum.Clear();
             this.pParser.PPucker.PuckerMarker.Clear();
             int i = this.pParser.PIEdit.GetVerticalScrollValue / FontContainer.FontHeight;
             int numStart = i;
             int startNum = this.GetStartNum(i);
             int count = Math.Min(this.pParser.GetCount(), i + (int)Math.Ceiling(this.pParser.PIEdit.GetHeight * 1d / FontContainer.FontHeight));
-            int top = 0;
+            int top;
             int startValue = i * FontContainer.FontHeight;
             int heightValue = count * FontContainer.FontHeight;
             this.GetLeftNumWidth(g);
@@ -217,15 +210,13 @@ namespace XZ.Edit {
                     this.MaxWidth = ls.Width;
                     this.pParser.PIEdit.SetMaxScollMaxWidth(ls.Width + this.GetLeftSpace);
                 }
-                this.SetPuckerMarker(ls, i);
+                
                 this.SetLineIndexYAndDrawNum(ls, i - numStart, ref startNum, g);
-                if (ls.IsFurl() || ls.IsCommentPucker)
-                    DrawPuckerShow(ls, top, g);
                 i++;
             }
             //draw line number
             this.DranNumBg(g);
-            //this.DrawPuckerIcon(g);
+            
         }
 
         /// <summary>
@@ -337,27 +328,6 @@ namespace XZ.Edit {
                 return _dianWidth * 3;
             }
         }
-        private void DrawPuckerShow(LineString ls, int top, Graphics g) {
-            if (_dianWidth == 0)
-                _dianWidth = CharCommand.GetCharWidth(g, "·", FontContainer.DefaultFont);
-            var left = ls.Width + this.GetLeftSpace - this.pParser.PIEdit.GetHorizontalScrollValue;
-            g.DrawLine(this._puckerPen, left - ls.Width, top + FontContainer.FontHeight, left, top + FontContainer.FontHeight);
-            g.DrawRectangle(this._puckerPen, new Rectangle(
-                  left,
-                   top,
-                   _dianWidth * 3,
-                   FontContainer.FontHeight
-                   ));
-            TextRenderer.DrawText(g, "···",
-                FontContainer.DefaultFont,
-                new Point(left, top + FontContainer.FontHeight / 5),
-                this.pParser.PIEdit.PuckerColor,
-                CharCommand.CTextFormatFlags);
-        }
-
-        
-
-        
         private SolidBrush findBackGoundBrush;
         private SolidBrush findSelectBackGroundBrush;
         /// <summary>

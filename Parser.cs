@@ -11,7 +11,7 @@ using XZ.Edit.Interfaces;
 namespace XZ.Edit {
     public class Parser {
 
-        #region 私有构造
+        
         private IEdit pIEdit;
         private Draw pDraw;
         private LanguageMode pLanguageMode;
@@ -19,21 +19,16 @@ namespace XZ.Edit {
         private CursorAndIME pCursor;
         public Parser(IEdit iedit, CursorAndIME cursor) {
             this.pIEdit = iedit;
-            //this.PLCProperty = new LineColsProperty();
             this.PPucker = new Pucker(this);
             this.pDraw = new Draw(this);
-            this.pCharFontStyle = new CharFontStyle(iedit/*, this.PLCProperty*/);
+            this.pCharFontStyle = new CharFontStyle(iedit);
             this.pCursor = cursor;
             this.PRedo = new List<BaseAction>();
             this.PUndo = new List<BaseAction>();
 
         }
 
-
-        #endregion
-
-        #region 属性
-
+        
         public Pucker PPucker { get; set; }
 
         //public LineColsProperty PLCProperty { get; set; }
@@ -109,9 +104,7 @@ namespace XZ.Edit {
         }
 
 
-        #endregion
-
-        #region 文本
+        
         public string GetText() {
             var sbStr = new StringBuilder();
             foreach (var s in this.PLineString) {
@@ -226,13 +219,7 @@ namespace XZ.Edit {
             this.PUndo.Add(action);
         }
 
-
-
-
-        #endregion
-
-        #region 获取行
-
+        
         /// <summary>
         /// 获取行个数
         /// </summary>
@@ -286,8 +273,6 @@ namespace XZ.Edit {
             return width;
         }
 
-        #endregion
-
         #region 方法
 
         /// <summary>
@@ -336,8 +321,6 @@ namespace XZ.Edit {
         }
 
         #endregion
-
-        #region 双击选择
 
         public void DoubleSelectCrusorWord() {
             var sWord = this.pCursor.PSursorSelectWord;
@@ -473,10 +456,6 @@ namespace XZ.Edit {
                 }
             }
         }
-
-        #endregion
-
-        #region 位置
 
 
         public int GetSelectLineIndex {
@@ -705,10 +684,6 @@ namespace XZ.Edit {
         }
 
 
-        #endregion
-
-        #region 选择部分
-
 
         /// <summary>
         /// 重置行中的LNP。同时删除Pucker相关数据
@@ -799,11 +774,6 @@ namespace XZ.Edit {
             MouseMoveSelect(startPoint, endPoint);
 
         }
-
-
-        #endregion
-
-        #region 配备字符
 
         public bool IsFindCouple { get; set; }
 
@@ -939,6 +909,5 @@ namespace XZ.Edit {
                 return lnp.Couple.First().Value;
         }
 
-        #endregion
     }
 }
