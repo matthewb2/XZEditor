@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B9CE1920-82E8-4C4E-AD5D-991ADDA8D484}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XZ.Edit</RootNamespace>
+    <AssemblyName>XZ.Edit</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actions\AllSelectAction.cs" />
+    <Compile Include="Actions\BackSpaceAction.cs" />
+    <Compile Include="Actions\BaseAction.cs" />
+    <Compile Include="Actions\CommentAction.cs" />
+    <Compile Include="Actions\CopyAction.cs" />
+    <Compile Include="Actions\CutAction.cs" />
+    <Compile Include="Actions\DeleteBackSpaceAciton.cs" />
+    <Compile Include="Actions\CutPasteAction.cs" />
+    <Compile Include="Actions\DeleteAction.cs" />
+    <Compile Include="Actions\DeletePasteAction.cs" />
+    <Compile Include="Actions\DeleteLineStringAction.cs" />
+    <Compile Include="Actions\EndAction.cs" />
+    <Compile Include="Actions\EnterAction.cs" />
+    <Compile Include="Actions\InsertAction.cs" />
+    <Compile Include="Actions\LeftAction.cs" />
+    <Compile Include="Actions\NoneAction.cs" />
+    <Compile Include="Actions\PasteAction.cs" />
+    <Compile Include="Actions\PuckerAction.cs" />
+    <Compile Include="Actions\PuckerDeleteAction.cs" />
+    <Compile Include="Actions\RedoAction.cs" />
+    <Compile Include="Actions\RetractAction.cs" />
+    <Compile Include="Actions\RightAction.cs" />
+    <Compile Include="Actions\SelectLeftAction.cs" />
+    <Compile Include="Actions\UndoAction.cs" />
+    <Compile Include="Actions\UPAction.cs" />
+    <Compile Include="Actions\DownAction.cs" />
+    <Compile Include="Actions\SelectRightAction.cs" />
+    <Compile Include="Actions\SelectDownAction.cs" />
+    <Compile Include="Actions\SelectUPAction.cs" />
+    <Compile Include="CharCommand.cs" />
+    <Compile Include="CharFontStyle.cs" />
+    <Compile Include="CoupleProperty.cs" />
+    <Compile Include="CursorAndIME.cs" />
+    <Compile Include="Draw.cs" />
+    <Compile Include="EditTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditTextBox.Designer.cs">
+      <DependentUpon>EditTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Actions\BackSpanPasteAction.cs" />
+    <Compile Include="Entity\CollectionLineNode.cs" />
+    <Compile Include="Entity\CompletionData.cs" />
+    <Compile Include="Entity\CPoint.cs" />
+    <Compile Include="Entity\DrawMLStyle.cs" />
+    <Compile Include="Entity\DrawRect.cs" />
+    <Compile Include="Entity\EndWordStyle.cs" />
+    <Compile Include="Entity\ESelectLineStyle.cs" />
+    <Compile Include="Entity\EWordType.cs" />
+    <Compile Include="Entity\FindText.cs" />
+    <Compile Include="Entity\FindTextLocation.cs" />
+    <Compile Include="Entity\FindTextResult.cs" />
+    <Compile Include="Entity\LanguageMode.cs" />
+    <Compile Include="Entity\LineNode.cs" />
+    <Compile Include="Entity\MoreLineStyle.cs" />
+    <Compile Include="Entity\PuckerLineStringAndID.cs" />
+    <Compile Include="Entity\PuckerMarker.cs" />
+    <Compile Include="Entity\ResultPuckerListData.cs" />
+    <Compile Include="Entity\StartEndPointion.cs" />
+    <Compile Include="Entity\StartWordStyle.cs" />
+    <Compile Include="Entity\SursorSelectWord.cs" />
+    <Compile Include="Entity\ToolTipMessageEventArgs.cs" />
+    <Compile Include="Entity\UseWordFont.cs" />
+    <Compile Include="Entity\UseStyle.cs" />
+    <Compile Include="Entity\WFontColor.cs" />
+    <Compile Include="Entity\WordIncluedStyle.cs" />
+    <Compile Include="FontContainer.cs" />
+    <Compile Include="Forms\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CompletionWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CToolTip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ResList.cs" />
+    <Compile Include="Forms\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="InitLanguageMode.cs" />
+    <Compile Include="Interfaces\IEdit.cs" />
+    <Compile Include="EventEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Entity\LineString.cs" />
+    <Compile Include="Interfaces\IProperty.cs" />
+    <Compile Include="KeyEvent.cs" />
+    <Compile Include="LineNodeProperty.cs" />
+    <Compile Include="Parser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Entity\Word.cs" />
+    <Compile Include="Pucker.cs" />
+    <Compile Include="ToObject.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\class.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Res\CSharp.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\const.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delegate.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enum.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\event.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interface.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\namespace.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\struct.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\field.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hPProperty.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\method.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\none.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\property.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Res\JavaScript.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Res\Json.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\propertyext.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\methodext.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
