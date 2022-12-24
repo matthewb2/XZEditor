@@ -1,0 +1,14 @@
+C:\Users\bests\source\repos\TreeDemoEx\TreeDemoEx\bin\Debug\netcoreapp3.1\TreeDemoEx.exe
+C:\Users\bests\source\repos\TreeDemoEx\TreeDemoEx\bin\Debug\netcoreapp3.1\TreeDemoEx.deps.json
+C:\Users\bests\source\repos\TreeDemoEx\TreeDemoEx\bin\Debug\netcoreapp3.1\TreeDemoEx.runtimeconfig.json
+C:\Users\bests\source\repos\TreeDemoEx\TreeDemoEx\bin\Debug\netcoreapp3.1\TreeDemoEx.runtimeconfig.dev.json
+C:\Users\bests\source\repos\TreeDemoEx\TreeDemoEx\bin\Debug\netcoreapp3.1\TreeDemoEx.dll
+C:\Users\bests\source\repos\TreeDemoEx\TreeDemoEx\bin\Debug\netcoreapp3.1\TreeDemoEx.pdb
+C:\Users\bests\source\repos\TreeDemoEx\TreeDemoEx\obj\Debug\netcoreapp3.1\TreeDemoEx.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bests\source\repos\TreeDemoEx\TreeDemoEx\obj\Debug\netcoreapp3.1\TreeDemoEx.AssemblyInfoInputs.cache
+C:\Users\bests\source\repos\TreeDemoEx\TreeDemoEx\obj\Debug\netcoreapp3.1\TreeDemoEx.AssemblyInfo.cs
+C:\Users\bests\source\repos\TreeDemoEx\TreeDemoEx\obj\Debug\netcoreapp3.1\TreeDemoEx.csproj.CoreCompileInputs.cache
+C:\Users\bests\source\repos\TreeDemoEx\TreeDemoEx\obj\Debug\netcoreapp3.1\TreeDemoEx.dll
+C:\Users\bests\source\repos\TreeDemoEx\TreeDemoEx\obj\Debug\netcoreapp3.1\TreeDemoEx.pdb
+C:\Users\bests\source\repos\TreeDemoEx\TreeDemoEx\obj\Debug\netcoreapp3.1\TreeDemoEx.genruntimeconfig.cache
+C:\Users\bests\source\repos\TreeDemoEx\TreeDemoEx\obj\Debug\netcoreapp3.1\TreeDemoEx.csproj.AssemblyReference.cache
